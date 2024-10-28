@@ -1,0 +1,1 @@
+final String ROOT_API_CATALOGS_URL = 'https://dev.hqsoft.vn/ProducteSales2023_DEV_SFA';

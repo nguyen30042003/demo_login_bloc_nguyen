@@ -100,40 +100,42 @@ class _LoginState extends State<Login> {
                 width: double.infinity,
                 child: Align(
                   alignment: Alignment.bottomCenter,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      SizedBox(
-                          width: 60,
-                          child: Image.asset(AppImages.getImages('esale.png'))
-                      ),
-                      const Text(
-                        'eSales SFA',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        SizedBox(
+                            width: 60,
+                            child: Image.asset(AppImages.getImages('esale.png'))
                         ),
-                      ),
-                      const Text(
-                        'CJFood',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
+                        const Text(
+                          'eSales SFA',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 10,),
-                      const Text(
-                        'Phiên bản eSale ngày 23/10/2024',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                        const Text(
+                          'CJFood',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 8,),
-                    ],
+                        const SizedBox(height: 10,),
+                        const Text(
+                          'Phiên bản eSale ngày 23/10/2024',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        const SizedBox(height: 8,),
+                      ],
+                    ),
                   ),
                 ),
               ),
