@@ -20,14 +20,11 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           imei: "",
         );
         AuthenticationResponse authenticationResponse = await _authenticationRepository.authentication(authenticationRequest);
-        if (authenticationResponse != null) {
-          final prefs = await SharedPreferences.getInstance();
-          await prefs.setString('jwtToken', authenticationResponse.accessToken);
-          emit(LoginLoaded(isAuthenicated: true));
-        } else {
-          emit(LoginLoaded(isAuthenicated: false));
-        }
-      } catch (e) {
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString('jwtToken', authenticationResponse.accessToken);
+        await prefs.setString('slsperID', event.username);
+        emit(LoginLoaded(isAuthenicated: true));
+            } catch (e) {
         emit(LoginFailure(message: 'Error processing login'));
       }
     });

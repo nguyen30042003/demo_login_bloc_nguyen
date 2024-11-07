@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login/data_app/repository/user_repository.dart';
 import 'package:login/screens/home_page/bloc_get_user/get_user_bloc.dart';
 import 'package:login/screens/home_page/bloc_get_user/get_user_event.dart';
+import 'package:login/screens/notification/notify_main_screen.dart';
 import 'package:login/utils/pallete.dart';
 
 import 'bloc_get_user/get_user_state.dart';
@@ -14,8 +15,25 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Pallete.background1Color,
+      appBar: AppBar(
+        backgroundColor: Pallete.background2Color,
+        title: const Text("Action Demo"),
+        actions: <Widget>[
+
+          IconButton(
+            icon: const Icon(
+              Icons.notifications,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const NotifyMainScreen()));
+            },
+          ),
+
+        ],
+      ),
       body: BlocProvider(
-        create: (_) => GetUserBloc(UserRepository())..add(GetUserInformation()),
+        create: (_) => GetUserBloc(UserRepository())..add(const GetUserInformation()),
         child: BlocBuilder<GetUserBloc, GetUserState>(
           builder: (context, state) {
             if (state is GetUserLoading) {

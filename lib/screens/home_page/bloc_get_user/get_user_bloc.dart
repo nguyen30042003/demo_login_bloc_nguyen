@@ -12,10 +12,8 @@ class GetUserBloc extends Bloc<GetUserEvent, GetUserState> {
       emit(GetUserLoading());
       try {
         UserInformation userInformation = await _userRepository.fetchUserInformation();
-        if (userInformation != null) {
-          emit(GetUserLoaded(userInformation: userInformation));
-        }
-      } catch (e) {
+        emit(GetUserLoaded(userInformation: userInformation));
+            } catch (e) {
         emit(GetUserFailure(message: 'Error processing login'));
       }
     });

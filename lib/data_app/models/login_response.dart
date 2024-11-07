@@ -10,7 +10,7 @@ class LoginResponse extends Equatable {
   final DataLoginLate? dataLoginLate;
   final bool isChangePassword;
 
-  LoginResponse({
+  const LoginResponse({
     required this.accessToken,
     this.checkInBranchData,
     this.dataLoginLate,
@@ -37,7 +37,7 @@ class DataLoginLate extends Equatable {
   final String? lateTime;
   final String policyTime;
 
-  DataLoginLate({
+  const DataLoginLate({
     required this.visitTime,
     this.lateTime,
     required this.policyTime,
